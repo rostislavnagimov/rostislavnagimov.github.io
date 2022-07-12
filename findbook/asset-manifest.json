@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/findbook/static/css/main.ae9b4258.css",
+    "main.js": "/findbook/static/js/main.1102abc2.js",
+    "static/js/787.ea6d8f93.chunk.js": "/findbook/static/js/787.ea6d8f93.chunk.js",
+    "static/media/bgimg.png": "/findbook/static/media/bgimg.6b664aee071c8a3fb70e.png",
+    "static/media/logo.svg": "/findbook/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/findbook/index.html",
+    "main.ae9b4258.css.map": "/findbook/static/css/main.ae9b4258.css.map",
+    "main.1102abc2.js.map": "/findbook/static/js/main.1102abc2.js.map",
+    "787.ea6d8f93.chunk.js.map": "/findbook/static/js/787.ea6d8f93.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae9b4258.css",
+    "static/js/main.1102abc2.js"
+  ]
+}
