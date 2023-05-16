@@ -1,0 +1,46 @@
+@import "styles/_variables";
+
+.resume {
+  padding: 10px;
+  
+  &__item {
+    margin-bottom: $space-0;
+
+    &__name {
+      box-sizing: border-box;
+      padding: 5px;
+      box-shadow: 5px 5px 10px $lighter-color;
+      border-radius: 6px;
+      background-color: $light-color;
+      color: white;
+      width: 100%;
+    }
+
+    &__content {
+      text-align: start;
+      padding-left: 10px;
+      padding-right: 10px;
+      box-sizing: border-box;
+      box-shadow: 5px 5px 10px $lighter-color;
+      border: 1px solid $light-color;
+      border-radius: 9px;
+      background-color: $lightest-color;
+      width: 100%;
+
+    &__string {
+      margin: 5px;
+    }
+    }
+  }
+}
+
+@mixin seq-fade ($number) {
+  .resume > :nth-child(#{$number}) {
+    opacity: 0;
+    animation: fade-in 2s forwards (#{$number * 0.25}s);
+  }
+}
+
+@for $i from 1 through 5  {
+  @include seq-fade($i);
+}

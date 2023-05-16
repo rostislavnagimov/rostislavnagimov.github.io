@@ -1,0 +1,54 @@
+@import "styles/_variables";
+
+.header {
+  width: 100vw;
+  background-color: $color;
+  color: white;
+
+  &__navigation {
+    display: flex;
+    justify-content: flex-end;
+  
+    @media (max-width: $small-display-breakpoint) {
+      justify-content: start;
+    }
+
+    &__item {
+      padding: $space-0;
+      opacity: 0.5;
+
+      @media (max-width: $extra-small-display-breakpoint) {
+        font-size: small;
+      }
+    
+      &--selected {
+        padding: $space-0;
+        font-weight: bold;
+        background-color: $light-color;
+
+        @media (max-width: $extra-small-display-breakpoint) {
+          font-size: small;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+        background-color: $light-color;
+      }
+    }
+
+    &__logo, 
+    &__logo--selected {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin: $space-0;
+      font-weight: bold;
+    
+      @media (max-width: $small-display-breakpoint) {
+        display: none;
+      }
+    }
+  }
+}
+

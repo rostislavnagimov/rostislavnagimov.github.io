@@ -1,0 +1,16 @@
+@import "styles/_variables";
+
+.footer {
+  color: white;
+  background-color: $color;
+  height: 48px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  padding-top: 10px;
+  width: 100%;
+
+  @media (min-width: $small-display-breakpoint) {
+      display: none;
+  }
+}

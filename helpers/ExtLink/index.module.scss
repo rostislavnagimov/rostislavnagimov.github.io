@@ -1,0 +1,18 @@
+@import "styles/_variables";
+
+.external-link {
+  background-color: $light-color;
+  color: $lightest-color;
+  border-radius: 3px;
+  padding: 1px 5px 1px 5px;
+  border: 1px solid $color;
+
+  &:hover {
+    text-shadow: 1px 1px 10px $color;
+    font-weight: bold;
+  }
+  &:active {
+    font-size: small;
+    opacity: 0.8;
+  }
+}

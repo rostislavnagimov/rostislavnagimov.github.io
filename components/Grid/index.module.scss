@@ -1,0 +1,27 @@
+@import "styles/_variables";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+
+  @media (max-width: $medium-display-breakpoint) {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  }
+
+@mixin dynamic-col($number) {
+  .col-#{$number} {
+      grid-column: auto/span #{$number};
+
+    @media (max-width: $medium-display-breakpoint) {
+      grid-column: 1;
+      width: 100%;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  @include dynamic-col($i);
+}
