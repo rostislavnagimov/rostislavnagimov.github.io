@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ navData }) => (
             text={item.text}
             href={item.href}
             type={item.type}
-            isActive={`/cv${item.href}` === document.location.pathname}
+            isActive={item.href === document.location.pathname}
           />
         )
       )}
