@@ -30,7 +30,6 @@ const navigation: Array<NavItemPropsType> = [
   {text: 'rostislav.cv', href: '/', type: 'logo'},
   {text: '.experience', href: '/experience'},
   {text: '.projects', href: '/projects'},
-  {text: '.contacts', href: '/contacts'},
 ]
 
 export default App
