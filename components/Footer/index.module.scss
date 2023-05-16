@@ -3,14 +3,10 @@
 .footer {
   color: white;
   background-color: $color;
-  height: 48px;
+  height: 1em;
   text-align: center;
   position: fixed;
   bottom: 0;
   padding-top: 10px;
   width: 100%;
-
-  @media (min-width: $small-display-breakpoint) {
-      display: none;
-  }
 }

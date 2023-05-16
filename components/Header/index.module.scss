@@ -8,10 +8,6 @@
   &__navigation {
     display: flex;
     justify-content: flex-end;
-  
-    @media (max-width: $small-display-breakpoint) {
-      justify-content: start;
-    }
 
     &__item {
       padding: $space-0;
@@ -44,9 +40,9 @@
       top: 0;
       margin: $space-0;
       font-weight: bold;
-    
-      @media (max-width: $small-display-breakpoint) {
-        display: none;
+
+      @media (max-width: $extra-small-display-breakpoint) {
+        font-size: small;
       }
     }
   }
