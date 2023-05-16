@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
 
 import Body from '@/components/Body'
+import Footer from '@/components/Footer'
 
 import { NavItemPropsType } from '@/components/Header/types'
 
@@ -10,11 +11,6 @@ const Header = dynamic(
   () => import('../components/Header'),
   { ssr: false }
 )
-const Footer = dynamic(
-  () => import('../components/Footer'),
-  { ssr: false }
-)
-
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>
