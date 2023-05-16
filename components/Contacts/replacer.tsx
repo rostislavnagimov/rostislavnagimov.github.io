@@ -1,8 +1,10 @@
 import email from "./email"
+import linkedIn from "./linkedin"
 import telegram from "./telegram"
 
 const mail = email({address: 'rostislav.nagimov@gmail.com'})
 const tele = telegram({name: 'rostislavnagimov'})
+const link = linkedIn({name: 'rostislavnagimov', alias: 'Rostislav Nagimov'})
 
 const replacer = (string: string) => {
   if (string.includes('/email/')) {
@@ -18,6 +20,14 @@ const replacer = (string: string) => {
       <>
         {string.split('/telegram/')[0]}
         {tele}
+      </>
+    )
+  }
+  if (string.includes('/linkedIn/')) {
+    return (
+      <>
+        {string.split('/linkedIn/')[0]}
+        {link}
       </>
     )
   }
