@@ -1,7 +1,10 @@
 import React from 'react'
 
-const HomePage = () => (
-  <></>
+import Content from '@/components/Content'
+import experience from '@/data/projects.json'
+
+const Projects = () => (
+  <Content itemData={experience} titles={true} labels={false}/>
 )
 
-export default HomePage
+export default Projects
