@@ -1,0 +1,20 @@
+{
+  "Front-end developer": [
+    "Eventinc GmbH, Hamburg, Germany (Remote)",
+    "August 2022 - May 2023",
+    "(10 month)",
+    "NextJS component-based development (functional components with module SCSS styles in TypeScript)",
+    "Legacy refactoring and migratimg (class components => functional components, JavaScript => TypeScript, LESS => SCSS)",
+    "Creating and adjusting Jest unit-tests",
+    "Implementing layout-desing changes, functional changes, whole new components",
+    "Collaboration and effective communication in a teamwork, pair-programming and plannings",
+    "Executing inner-development-manual-QA process for changes and code reviews",
+    "Working with Docker'ed environment and Ruby on Rails backend"
+  ],
+  "QA-engineer": [
+    "Yandex LLC, Moscow, Russia (Remote)",
+    "December 2021 - February 2022",
+    "(3 month)",
+    "My responsibilities included the execution of test kits for the implementation of functional testing of various software products. Testing was performed on web versions of services, in mobile applications on the iOS operating system, as well as on Mac devices and the Android operating system using emulators."
+  ]
+}

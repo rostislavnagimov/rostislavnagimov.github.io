@@ -13,12 +13,13 @@
     "JavaScript (ECMAScript 6+), NodeJS",
     "TypeScript",
     "Redux/Redux Toolkit",
+    "GraphQL / Apollo",
     "Git (GitHub)",
     "Jest/RTL for unit tests, Cypress/Selenium for integration and E2E"
   ],
   "Experience" : [
     "10 month commercial experience as a Front-end developer",
-    "6 month commercial experience as a QA engineer",
+    "3 month commercial experience as a QA engineer",
     "3+ years of non-commercial non-development experience in differrent web projects",
     "7+ years of technical engineering background"
   ]
