@@ -1,11 +1,10 @@
 import React from 'react'
 
-import Resume from '@/components/Resume'
+import Content from '@/components/Content'
 import resume from '@/data/resume.json'
 
 const Home = () => (
-  <Resume itemData={resume} />
+  <Content itemData={resume} />
 )
-
 
 export default Home

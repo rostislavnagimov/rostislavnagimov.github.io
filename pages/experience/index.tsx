@@ -1,28 +1,10 @@
 import React from 'react'
 
-import Body from "@/components/Body"
+import Content from '@/components/Content'
+import experience from '@/data/experience.json'
 
-const HomePage = () => (
-  <Body>
-    <>
-      <h1
-        className="
-          mt-16
-          text-center
-          bg-blue-500
-          hover:bg-red-500
-          transition
-          duration-500
-          ease-in-out
-          py-2
-          px-4
-          rounded-full
-        "
-      >
-        Some initial text
-      </h1>
-    </>
-  </Body>
+const Experience = () => (
+  <Content itemData={experience} titles={true} labels={false}/>
 )
 
-export default HomePage
+export default Experience
