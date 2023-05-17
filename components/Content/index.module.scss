@@ -17,11 +17,15 @@
     }
 
     &__title {
+      background-color: $light-color;
+      color: white;
+      border-radius: 6px 6px 0 0;
       margin: 0 -10px 0 -10px;
       padding: 0 15px 0 15px;
       text-align: start;
       border-bottom: 1px solid $light-color;;
       min-width: 100%;
+      font-size: x-large;
     }
 
     &__content {
