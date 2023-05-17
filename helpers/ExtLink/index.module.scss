@@ -1,6 +1,7 @@
 @import "styles/_variables";
 
 .external-link {
+  word-break: break-word;
   background-color: $light-color;
   color: $lightest-color;
   border-radius: 3px;
