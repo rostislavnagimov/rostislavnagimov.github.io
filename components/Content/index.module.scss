@@ -1,6 +1,6 @@
 @import "styles/_variables";
 
-.resume {
+.Content {
   padding: 10px;
   
   &__item {
@@ -35,7 +35,7 @@
 }
 
 @mixin seq-fade ($number) {
-  .resume > :nth-child(#{$number}) {
+  .Content > :nth-child(#{$number}) {
     opacity: 0;
     animation: fade-in 2s forwards (#{$number * 0.25}s);
   }
