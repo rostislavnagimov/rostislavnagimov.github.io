@@ -1,10 +1,6 @@
-@function enlight($color, $number) {
-  @return mix($color, white, $number);
-}
-
 @keyframes fade-in {
-  0% {opacity: 0; transform: translateY(-10px); filter: saturate(0) blur(5px);}
-  80% {opacity: 1; transform: translateY(5px); filter: saturate(0) blur(1px)}
+  0% {opacity: 0; transform: translateY(-3px); filter: saturate(0) blur(3px);}
+  60% {opacity: 1; transform: translateY(3px); filter: saturate(0.5) blur(1px)}
   100% {opacity: 1; transform: translateY(0)}
 }
 
@@ -12,9 +8,9 @@ $medium-display-breakpoint: 600px;
 $small-display-breakpoint: 400px;
 $extra-small-display-breakpoint: 305px;
 
-$color: rgb(20, 70, 64);
-$light-color: enlight($color, 70%);
-$lighter-color: enlight($color, 30%);
-$lightest-color: enlight($color, 10%);
+$color: var(--color);
+$light-color: var(--light-color);
+$lighter-color: var(--lighter-color);
+$lightest-color: var(--lightest-color);
 
 $space-0: 10px;
