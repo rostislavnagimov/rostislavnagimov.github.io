@@ -14,7 +14,7 @@ const Content: React.FC<itemData> = ({ itemData, labels = true, titles = false }
           {labels && (
             <Col span={2}>
               <div className={styles['Content__item__label']}>
-                {name}
+                {name.substring(1)}
               </div>
             </Col>
           )}
@@ -22,7 +22,7 @@ const Content: React.FC<itemData> = ({ itemData, labels = true, titles = false }
             <div className={styles['Content__item__content']}>
               {titles && (
                 <div className={styles['Content__item__title']}>
-                  {name}
+                  {name.substring(1)}
                 </div>
               )}
               {typeof content === 'string' && (

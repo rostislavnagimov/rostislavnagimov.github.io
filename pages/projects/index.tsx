@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Content from '@/components/Content'
-import experience from '@/data/projects.json'
+import { database } from '@/firebase.js';
 
-const Projects = () => (
-  <Content itemData={experience} titles={true} labels={false}/>
-)
+const Projects = () => {
+  const [projects, setProjects] = useState()
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const snapshot = await database.ref('/projects/').once('value');
+        const data = snapshot.val();
+        setProjects(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, [])
+  
+  return (
+    <>
+      {projects && <Content itemData={projects} titles={true} labels={false}/>}
+    </>
+  )
+}
 
 export default Projects

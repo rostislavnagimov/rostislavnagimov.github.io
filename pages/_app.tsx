@@ -1,13 +1,14 @@
-import '@/styles/globals.css'
+import { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
 
 import Body from '@/components/Body'
 import Footer from '@/components/Footer'
+import { NavItemPropsType } from '@/components/Header/types'
+
 import { colorScheme } from '@/helpers/colorScheme'
 
-import { NavItemPropsType } from '@/components/Header/types'
-import { useEffect } from 'react'
+import '@/styles/globals.css'
 
 const Header = dynamic(
   () => import('../components/Header'),

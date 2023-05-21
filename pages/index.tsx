@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Content from '@/components/Content'
-import resume from '@/data/resume.json'
+import { useEffect } from 'react'
+import { database } from '@/firebase.js';
 
-const Home = () => (
-  <Content itemData={resume} />
-)
+const Home = () => {
+  const [resume, setResume] = useState()
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const snapshot = await database.ref('/resume/').once('value');
+        const data = snapshot.val();
+        setResume(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, [])
+  
+  return (
+    <>
+      {resume && 
+        <Content itemData={resume} />
+      }
+    </>
+)}
 
 export default Home
