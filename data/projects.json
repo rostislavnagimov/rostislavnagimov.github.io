@@ -1,10 +1,10 @@
 {
-  "This site itself": [
+  "1This site itself": [
     "This site itself is a Next.js app written in TypeScript, utilizing SCSS module styles. I have developed it using highly reusable components, adhering to good coding practices throughout the codebase.",
     "Source code and the commit history (maybe someone interested) is located on GitHub you can reach through the link below:",
     "\\ https://github.com/rostislavnagimov/rostislavnagimov.github.io \\"
   ],
-  "FindBook": [
+  "2FindBook": [
     "React.js based app, working with a Google Books API. Store managment made with Redux. You can try iy here:",
     "\\ https://rostislavnagimov.github.io/findbook/ \\",
     "You also can find the source code of this project here:",

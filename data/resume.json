@@ -1,12 +1,12 @@
 {
-  "Name": "Rostislav Nagimov",
-  "Preferable position": "Front-end developer (ReactJS | NextJS | TypeScript)",
-  "Contacts": [
+  "1Name": "Rostislav Nagimov",
+  "2Preferable position": "Front-end developer (ReactJS | NextJS | TypeScript)",
+  "3Contacts": [
     "Email: /email/",
     "Telegram: /telegram/",
     "LinkedIn: /linkedIn/"
   ],
-  "Skills": [
+  "4Skills": [
     "ReactJS / NextJS component based development (including Bootstrap and Ant Design components)",
     "HTML and layout",
     "CSS (SCSS, LESS, Tailwind, Bootstrap)",
@@ -17,7 +17,7 @@
     "Git (GitHub)",
     "Jest/RTL for unit tests, Cypress/Selenium for integration and E2E"
   ],
-  "Experience" : [
+  "5Experience" : [
     "10 month commercial experience as a Front-end developer",
     "3 month commercial experience as a QA engineer",
     "3+ years of non-commercial non-development experience in differrent web projects",
