@@ -1,63 +1,49 @@
 import React, { ReactNode } from 'react'
 
 import { Row, Col } from '@/components/Grid/Index'
-import { JSONObject } from '@/types/types'
 import replacer from '../Contacts/replacer'
+import { ContentData } from './types'
 
 import styles from './index.module.scss'
 
-const Content: React.FC<itemData> = ({ itemData, labels = true, titles = false }) => (
+const Content: React.FC<ContentData> = ({ itemData }) => (
   <div className={styles['Content']}>
-    {Object.entries(itemData).map(([name, content], index) => (
+    {Object.keys(itemData).map((innerIndex, index) => {
+      const {label, title, content} = itemData[innerIndex]
+      console.log(label, title, content)
+
+      return (
       <div className={styles['Content__item']} key={index}>
         <Row>
-          {labels && (
+          {label && (
             <Col span={2}>
               <div className={styles['Content__item__label']}>
-                {name.substring(1)}
+                {label}
               </div>
             </Col>
           )}
-          <Col span={labels ? 10 : 12}>
+          <Col span={label ? 10 : 12}>
             <div className={styles['Content__item__content']}>
-              {titles && (
+              {title && (
                 <div className={styles['Content__item__title']}>
-                  {name.substring(1)}
+                  {title}
                 </div>
               )}
-              {typeof content === 'string' && (
-                <p className={styles['Content__item__content__string']}>{content}</p>
-              )}
-              {Array.isArray(content) && (
+              {content.map((string, index) => (
                 <>
-                  {content.map((string, index) => (
-                    <>
-                      {string && (
-                        <p key={index} className={styles['Content__item__content__string']}>
-                          {replacer(string)}
-                        </p>
-                      )}
-                    </>
-                  ))}
+                  {string && (
+                    <p key={index} className={styles['Content__item__content__string']}>
+                      {replacer(string)}
+                    </p>
+                  )}
                 </>
-              )}
+              ))}
             </div>
           </Col>
         </Row>
       </div>
-    ))}
+    )})}
   </div>
 )
-
-export interface ContentItemProps {
-  name: string
-  content: ReactNode
-}
-
-interface itemData {
-  itemData: JSONObject
-  labels?: boolean
-  titles?: boolean
-}
 
 export default Content
