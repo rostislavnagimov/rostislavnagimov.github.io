@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 import { NavItemPropsType } from '@/components/Header/types'
 
 import { colorScheme } from '@/helpers/colorScheme'
+import { wrapper } from "../store/store";
 
 import '@/styles/globals.css'
 
@@ -37,4 +38,4 @@ const navigation: Array<NavItemPropsType> = [
   {text: '.projects', href: '/projects'},
 ]
 
-export default App
+export default wrapper.withRedux(App)
