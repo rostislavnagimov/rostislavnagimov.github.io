@@ -21,7 +21,7 @@ const Experience = () => {
   
   return (
     <>
-      {experience && <Content itemData={experience} titles={true} labels={false}/>}
+      {experience && <Content itemData={experience} />}
     </>
   )
 }

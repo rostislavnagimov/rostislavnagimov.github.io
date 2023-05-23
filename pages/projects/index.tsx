@@ -21,7 +21,7 @@ const Projects = () => {
   
   return (
     <>
-      {projects && <Content itemData={projects} titles={true} labels={false}/>}
+      {projects && <Content itemData={projects} />}
     </>
   )
 }
