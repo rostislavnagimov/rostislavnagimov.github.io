@@ -1,19 +1,20 @@
-@import "styles/_variables";
+@import "styles/variables";
 
 .external-link {
-  word-break: break-word;
+  padding: 1px 5px;
+  border: 1px solid $color;
+  border-radius: 3px;
   background-color: $light-color;
   color: white;
-  border-radius: 3px;
-  padding: 1px 5px 1px 5px;
-  border: 1px solid $color;
+  word-break: break-word;
 
   &:hover {
-    text-shadow: 1px 1px 10px $color;
     font-weight: bold;
+    text-shadow: 1px 1px 10px $color;
   }
+
   &:active {
-    font-size: small;
     opacity: 0.8;
+    font-size: small;
   }
 }

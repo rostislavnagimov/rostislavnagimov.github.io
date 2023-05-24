@@ -1,7 +1,20 @@
 @keyframes fade-in {
-  0% {opacity: 0; transform: translateY(-3px); filter: saturate(0) blur(3px);}
-  60% {opacity: 1; transform: translateY(3px); filter: saturate(0.5) blur(1px)}
-  100% {opacity: 1; transform: translateY(0)}
+  0% {
+    transform: translateY(-3px);
+    filter: saturate(0) blur(3px);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateY(3px);
+    filter: saturate(0.5) blur(1px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 $medium-display-breakpoint: 600px;
