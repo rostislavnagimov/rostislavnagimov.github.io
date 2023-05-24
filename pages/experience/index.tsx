@@ -1,27 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import Content from '@/components/Content'
-import { database } from '@/firebase.js';
+import { useSelector } from 'react-redux'
+import { selectExperience } from '@/store/slice'
 
 const Experience = () => {
-  const [experience, setExperience] = useState()
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const snapshot = await database.ref('/experience/').once('value');
-        const data = snapshot.val();
-        setExperience(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  const data = useSelector(selectExperience)
 
-    fetchData();
-  }, [])
-  
   return (
     <>
-      {experience && <Content itemData={experience} titles={true} labels={false}/>}
+      {data && <Content itemData={data} />}
     </>
   )
 }

@@ -1,31 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Content from '@/components/Content'
-import { useEffect } from 'react'
-import { database } from '@/firebase.js';
+import { useSelector } from 'react-redux'
+import { selectResume } from '@/store/slice'
 
 const Home = () => {
-  const [resume, setResume] = useState()
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const snapshot = await database.ref('/resume/').once('value');
-        const data = snapshot.val();
-        setResume(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  const data = useSelector(selectResume)
 
-    fetchData();
-  }, [])
-  
   return (
     <>
-      {resume && 
-        <Content itemData={resume} />
-      }
+      {data && <Content itemData={data} />}
     </>
-)}
+  )
+}
 
 export default Home
