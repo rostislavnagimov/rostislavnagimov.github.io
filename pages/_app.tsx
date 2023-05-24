@@ -7,7 +7,10 @@ import Footer from '@/components/Footer'
 import { NavItemPropsType } from '@/components/Header/types'
 
 import { colorScheme } from '@/helpers/colorScheme'
-import { wrapper } from "../store/store";
+import { wrapper } from "../store/store"
+import { database } from '@/firebase.js'
+import { setState } from '@/store/slice'
+import { useDispatch } from 'react-redux'
 
 import '@/styles/globals.css'
 
@@ -17,8 +20,20 @@ const Header = dynamic(
 )
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const dispatch = useDispatch()
+  const fetchData = async () => {
+    try {
+      const snapshot = await database.ref('/').once('value')
+      const data = snapshot.val()
+      dispatch(setState(data))
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   useEffect(() => {
     colorScheme()
+    fetchData()
   }, [])
 
   return (
