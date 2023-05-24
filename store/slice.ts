@@ -1,41 +1,39 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { AppState } from "./store";
-import { HYDRATE } from "next-redux-wrapper";
+import { createSlice } from "@reduxjs/toolkit"
+import { AppState } from "./store"
+import { HYDRATE } from "next-redux-wrapper"
 
-// Type for our state
-export interface AuthState {
-  authState: boolean;
+const initialState = {
+  experience: {},
+  resume: {},
+  projects: {}
 }
 
-// Initial state
-const initialState: AuthState = {
-  authState: false,
-};
-
-// Actual Slice
-export const authSlice = createSlice({
-  name: "auth",
+export const slice = createSlice({
+  name: "state",
   initialState,
   reducers: {
-    // Action to set the authentication status
-    setAuthState(state, action) {
-      state.authState = action.payload;
+    setState(state, action) {
+      return {
+        ...state,
+        ...action.payload,
+      };
     },
   },
-
-  // Special reducer for hydrating the state. Special case for next-redux-wrapper
   extraReducers: {
     [HYDRATE]: (state, action) => {
       return {
         ...state,
-        ...action.payload.auth,
+        ...action.payload,
       };
     },
   },
-});
+})
 
-export const { setAuthState } = authSlice.actions;
+export const { setState } = slice.actions;
 
-export const selectAuthState = (state: AppState) => state.auth.authState;
+export const selectState = (state: AppState) => state;
+export const selectResume = (state: AppState) => state.state.resume;
+export const selectProjects = (state: AppState) => state.state.projects;
+export const selectExperience = (state: AppState) => state.state.experience;
 
-export default authSlice.reducer;
+export default slice.reducer;
