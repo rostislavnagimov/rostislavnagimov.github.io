@@ -10,7 +10,6 @@ const Content: React.FC<ContentData> = ({ itemData }) => (
   <div className={styles['Content']}>
     {Object.keys(itemData).map((innerIndex, index) => {
       const {label, title, content} = itemData[innerIndex]
-      console.log(label, title, content)
 
       return (
       <div className={styles['Content__item']} key={index}>

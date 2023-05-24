@@ -35,7 +35,6 @@ const replacer = (string: string) => {
     )
   }
   if (externalLink) {
-    console.log(externalLink)
     return (
       <>
         <ExtLink
