@@ -16,7 +16,7 @@ import '@/styles/globals.css'
 
 const Header = dynamic(
   () => import('../components/Header'),
-  { ssr: false }
+  { ssr: false },
 )
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -25,6 +25,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     try {
       const snapshot = await database.ref('/').once('value')
       const data = snapshot.val()
+
       dispatch(setState(data))
     } catch (error) {
       console.error(error)
@@ -34,7 +35,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     colorScheme()
     fetchData()
-  }, [])
+  })
 
   return (
     <>
@@ -48,9 +49,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 }
 
 const navigation: Array<NavItemPropsType> = [
-  {text: 'rostislav.cv', href: '/', type: 'logo'},
-  {text: '.experience', href: '/experience'},
-  {text: '.projects', href: '/projects'},
+  { text: 'rostislav.cv', href: '/', type: 'logo' },
+  { text: '.experience', href: '/experience' },
+  { text: '.projects', href: '/projects' },
 ]
 
 export default wrapper.withRedux(App)
