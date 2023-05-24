@@ -25,6 +25,8 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "indent": ["error", 2],
+    "brace-style": ["error", "1tbs", {"allowSingleLine": true}],
     "quote-props": ["error", "as-needed"],
     "jsx-quotes": ["error", "prefer-double"],
     "object-curly-spacing": ["error", "always"],
