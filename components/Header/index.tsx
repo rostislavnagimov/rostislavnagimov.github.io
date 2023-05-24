@@ -9,14 +9,14 @@ const Header: React.FC<HeaderProps> = ({ navData }) => (
   <header className={styles['header']}>
     <nav className={styles['header__navigation']}>
       {navData.map((item, index) => (
-          <NavItem
-            key={index}
-            text={item.text}
-            href={item.href}
-            type={item.type}
-            isActive={item.href === document.location.pathname}
-          />
-        )
+        <NavItem
+          key={index}
+          text={item.text}
+          href={item.href}
+          type={item.type}
+          isActive={item.href === document.location.pathname}
+        />
+      ),
       )}
     </nav>
   </header>

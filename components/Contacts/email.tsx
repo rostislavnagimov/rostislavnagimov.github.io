@@ -1,6 +1,6 @@
 import ExtLink from "@/helpers/ExtLink"
 
-const email: React.FC<EmailProps> = ({address, template, alias}) => {
+const email: React.FC<EmailProps> = ({ address, template, alias }) => {
   let mailto = `mailto:${address}`
   
   if (template) {

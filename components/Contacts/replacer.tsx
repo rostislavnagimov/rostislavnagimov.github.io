@@ -4,12 +4,13 @@ import telegram from "./telegram"
 
 import ExtLink from "@/helpers/ExtLink"
 
-const mail = email({address: 'rostislav.nagimov@gmail.com'})
-const tele = telegram({name: 'rostislavnagimov'})
-const link = linkedIn({name: 'rostislavnagimov', alias: 'Rostislav Nagimov'})
+const mail = email({ address: 'rostislav.nagimov@gmail.com' })
+const tele = telegram({ name: 'rostislavnagimov' })
+const link = linkedIn({ name: 'rostislavnagimov', alias: 'Rostislav Nagimov' })
 
 const replacer = (string: string) => {
   const externalLink = string.match(/\\(.+)\\/g)
+
   if (string.includes('/email/')) {
     return (
       <>
@@ -39,11 +40,12 @@ const replacer = (string: string) => {
       <>
         <ExtLink
           href={externalLink[0].slice(2, -2)}
-          target='blank'
+          target="blank"
         />
       </>
     )
   }
+
   return string
 }
 

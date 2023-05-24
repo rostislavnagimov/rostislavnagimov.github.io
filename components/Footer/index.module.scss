@@ -1,12 +1,12 @@
-@import "styles/_variables";
+@import "styles/variables";
 
 .footer {
-  color: white;
-  background-color: $color;
-  height: 1em;
-  text-align: center;
   position: fixed;
   bottom: 0;
-  padding-top: 10px;
   width: 100%;
+  height: 1em;
+  padding-top: 10px;
+  background-color: $color;
+  color: white;
+  text-align: center;
 }

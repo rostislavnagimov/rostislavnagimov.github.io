@@ -1,19 +1,19 @@
-@import "styles/_variables";
+@import "styles/variables";
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
   grid-gap: 10px;
+  grid-template-columns: repeat(12, 1fr);  
 
   @media (max-width: $medium-display-breakpoint) {
     grid-template-columns: 1fr;
     width: 100%;
   }
-  }
+}
 
 @mixin dynamic-col($number) {
   .col-#{$number} {
-      grid-column: auto/span #{$number};
+    grid-column: auto/span #{$number};
 
     @media (max-width: $medium-display-breakpoint) {
       grid-column: 1;

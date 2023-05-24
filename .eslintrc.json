@@ -1,3 +1,54 @@
 {
-  "extends": "next/core-web-vitals"
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@next/next/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "react",
+    "@next/next",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "brace-style": ["error", "1tbs", {"allowSingleLine": true}],
+    "quote-props": ["error", "as-needed"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "object-curly-spacing": ["error", "always"],
+    "padding-line-between-statements": ["error",
+      // add a line break between variable declaration and everything that follows
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      // but don"t enforce it between the single variables
+      { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
+      // add a line break before the return statement
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ],
+    "comma-dangle": ["error", "always-multiline"],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "max-len": ["error", { "code": 120, "tabWidth": 2, "ignoreComments": true }],
+    "multiline-ternary": "off",
+    "react/jsx-curly-spacing": ["error", "never"],
+    "react/jsx-equals-spacing": ["error", "never"],
+    "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
+    "react/jsx-tag-spacing": ["error", { "closingSlash": "never", "beforeSelfClosing": "always", "afterOpening": "never" }],
+    "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "multiline" }],
+    "react/jsx-no-target-blank": "off",
+    "react/display-name": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
+  }
 }

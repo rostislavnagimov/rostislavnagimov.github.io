@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-property-sort-order-smacss"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-selector-bem-pattern"
+  ],
+  "rules": {
+    "indentation": 2,
+    "scss/dollar-variable-empty-line-before": null,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "no-descending-specificity": null,
+    "function-name-case": null,
+    "function-whitespace-after": null,
+    "at-rule-empty-line-before": null,
+    "declaration-no-important": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "plugin/selector-bem-pattern": {
+      "componentName": "[A-Z]+",
+      "componentSelectors": "^\\.([a-z]+[a-zA-Z0-9]*)(?:__[a-z]+[a-zA-Z0-9]*)?(?:--[a-z]+[a-zA-Z0-9]*)?$",
+      "utilitySelectors": "^\\.u-[a-z]+[a-zA-Z0-9]*$"
+    }
+  }
+}
