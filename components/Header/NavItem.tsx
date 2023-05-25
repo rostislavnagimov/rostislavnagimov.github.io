@@ -10,7 +10,7 @@ const NavItem: React.FC<NavItemPropsType> = ({ text, href, isActive, type='item'
       href={href}
       className={styles[`header__navigation__link`]}
     >
-        {isActive ? `{${text}}` : text}
+      {isActive ? `{${text}}` : text}
     </Link>
   </div>
 )
