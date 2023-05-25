@@ -5,13 +5,14 @@ import { NavItemPropsType } from "./types";
 import styles from './index.module.scss'
 
 const NavItem: React.FC<NavItemPropsType> = ({ text, href, isActive, type='item' }) => (
-  <Link href={href}>
-    <div
-      className={styles[`header__navigation__${type}${isActive ? '--selected' : ''}`]}
+  <div className={styles[`header__navigation__${type}${isActive ? '--selected' : ''}`]} >
+    <Link
+      href={href}
+      className={styles[`header__navigation__link`]}
     >
-      {isActive ? `{${text}}` : text}
-    </div>
-  </Link>
+        {isActive ? `{${text}}` : text}
+    </Link>
+  </div>
 )
 
 export default NavItem
