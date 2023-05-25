@@ -1,42 +1,30 @@
 @import "styles/variables";
 
-$header-height: 45px;
-
 .header {
   width: 100vw;
-  height: $header-height;
   background-color: $color;
   color: white;
 
   &__navigation {
     display: flex;
     justify-content: flex-end;
-    height: inherit;
-
-    * {
-      @media (min-width: $small-display-breakpoint) {
-        width: 120px;
-      }
-      @media (max-width: $small-display-breakpoint) {
-        font-size: small;
-        width: 100px;
-      }
-      @media (max-width: $extra-small-display-breakpoint) {
-        font-size: small;
-        width: 90px;
-      }
-    }
 
     &__item {
-      display: table-cell;
-      text-align: center;
-      vertical-align: middle;
-      height: inherit;
+      padding: $space-0;
       opacity: 0.5;
 
+      @media (max-width: $extra-small-display-breakpoint) {
+        font-size: small;
+      }
+    
       &--selected {
+        padding: $space-0;
         background-color: $light-color;
         font-weight: bold;
+
+        @media (max-width: $extra-small-display-breakpoint) {
+          font-size: small;
+        }
       }
 
       &:hover {
@@ -45,20 +33,18 @@ $header-height: 45px;
       }
     }
 
-    &__logo,
+    &__logo, 
     &__logo--selected {
       position: absolute;
       top: 0;
       left: 0;
+      margin: $space-0;
       font-weight: bold;
-    }
 
-    &__link {
-      display: table-cell;
-      width: inherit;
-      height: $header-height;
-      text-align: center;
-      vertical-align: middle;
+      @media (max-width: $extra-small-display-breakpoint) {
+        font-size: small;
+      }
     }
   }
 }
+
