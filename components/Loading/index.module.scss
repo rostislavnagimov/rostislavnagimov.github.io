@@ -1,0 +1,38 @@
+@import "styles/variables";
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: timeout 5s forwards;
+
+  & div {
+    margin: 15px;
+    background-color: $light-color;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px
+  }
+}
+
+@keyframes heightChange {
+  0% { transform: scale(1); }
+  50% { transform: scale(2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes timeout {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@mixin seq-act($number) {
+  .loading > :nth-child(#{$number}) {
+    animation: heightChange 1s infinite ease-in-out (#{$number * 0.1}s);
+  }
+}
+
+@for $i from 1 through 5 {
+  @include seq-act($i);
+}

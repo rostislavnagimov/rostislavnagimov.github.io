@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 
 import styles from './index.module.scss'
+import Loading from '../Loading'
 import { useSelector } from 'react-redux'
 import { selectResume } from '@/store/slice'
 
@@ -10,7 +11,7 @@ const Body: React.FC<BodyProps> = ({ children }) => {
   return (
   <div className={styles[`body`]}>
     {isLoading
-      ? 'Loading'
+      ? <Loading />
       : children
     }
   </div>
