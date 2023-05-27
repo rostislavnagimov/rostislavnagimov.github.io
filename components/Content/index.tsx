@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Row, Col } from '@/components/Grid/Index'
-import replacer from '../Contacts/replacer'
+import replacer from '../../helpers/replacer'
 import { ContentData } from './types'
 
 import styles from './index.module.scss'
@@ -9,7 +9,7 @@ import styles from './index.module.scss'
 const Content: React.FC<ContentData> = ({ itemData }) => (
   <div className={styles['content']}>
     {Object.keys(itemData).map((innerIndex, index) => {
-      const { label, title, content } = itemData[innerIndex]
+      const { label, title, content, subtitle } = itemData[innerIndex]
 
       return (
         <div className={styles['content__item']} key={index}>
@@ -28,6 +28,15 @@ const Content: React.FC<ContentData> = ({ itemData }) => (
                     {title}
                   </div>
                 )}
+                {subtitle && subtitle.map((string, index) => (
+                  <>
+                    {string && (
+                      <p key={index} className={styles['content__item__content__subtitle']}>
+                        {replacer(string)}
+                      </p>
+                    )}
+                  </>
+                ))}
                 {content.map((string, index) => (
                   <>
                     {string && (

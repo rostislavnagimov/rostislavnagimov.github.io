@@ -1,6 +1,6 @@
-import email from "./email"
-import linkedIn from "./linkedin"
-import telegram from "./telegram"
+import email from "../components/Contacts/email"
+import linkedIn from "../components/Contacts/linkedin"
+import telegram from "../components/Contacts/telegram"
 
 import ExtLink from "@/components/ExtLink"
 
