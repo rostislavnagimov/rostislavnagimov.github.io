@@ -2,7 +2,7 @@ import email from "./email"
 import linkedIn from "./linkedin"
 import telegram from "./telegram"
 
-import ExtLink from "@/helpers/ExtLink"
+import ExtLink from "@/components/ExtLink"
 
 const mail = email({ address: 'rostislav.nagimov@gmail.com' })
 const tele = telegram({ name: 'rostislavnagimov' })

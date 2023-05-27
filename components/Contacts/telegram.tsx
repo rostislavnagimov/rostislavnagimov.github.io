@@ -1,5 +1,5 @@
 import React from "react"
-import ExtLink from "@/helpers/ExtLink"
+import ExtLink from "@/components/ExtLink"
 
 const telegram: React.FC<TelegramProps> = ({ name, alias }) => (
   <ExtLink
