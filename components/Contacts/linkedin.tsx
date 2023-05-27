@@ -1,5 +1,5 @@
 import React from "react"
-import ExtLink from "@/helpers/ExtLink"
+import ExtLink from "@/components/ExtLink"
 
 const linkedIn: React.FC<LinkedInProps> = ({ name, alias }) => (
   <ExtLink

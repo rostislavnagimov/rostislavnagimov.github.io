@@ -1,12 +1,12 @@
 import styles from './index.module.scss'
 
-const ExtLink: React.FC<ExtLinkProps> = ({href, className='external-link', target='self', alias}) => (
+const ExtLink: React.FC<ExtLinkProps> = ({ href, className='external-link', target='self', alias }) => (
   <a
     href={href}
     className={styles[className]}
     target={`_${target}`}
   >
-    {alias || href}
+    { alias || href }
   </a>
 )
 
