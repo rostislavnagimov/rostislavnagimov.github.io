@@ -9,13 +9,14 @@ const Body: React.FC<BodyProps> = ({ children }) => {
   const isLoading = Object.keys(useSelector(selectResume)).length ? false : true
   
   return (
-  <div className={styles[`body`]}>
-    {isLoading
-      ? <Loading />
-      : children
-    }
-  </div>
-)}
+    <div className={styles[`body`]}>
+      {isLoading
+        ? <Loading />
+        : children
+      }
+    </div>
+  )
+}
 
 interface BodyProps {
   children: ReactNode
