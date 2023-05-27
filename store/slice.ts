@@ -3,13 +3,18 @@ import { AppState } from "./store"
 import { HYDRATE } from "next-redux-wrapper"
 
 const initialState = {
-  experience: {},
-  resume: {},
-  projects: {}
+  info: {
+    isLoading: true
+  },
+  content: {
+    experience: {},
+    resume: {},
+    projects: {}
+  }
 }
 
 export const slice = createSlice({
-  name: "state",
+  name: "data",
   initialState,
   reducers: {
     setState(state, action) {
@@ -32,8 +37,9 @@ export const slice = createSlice({
 export const { setState } = slice.actions;
 
 export const selectState = (state: AppState) => state;
-export const selectResume = (state: AppState) => state.state.resume;
-export const selectProjects = (state: AppState) => state.state.projects;
-export const selectExperience = (state: AppState) => state.state.experience;
+export const selectResume = (state: AppState) => state.data.content.resume;
+export const selectProjects = (state: AppState) => state.data.content.projects;
+export const selectExperience = (state: AppState) => state.data.content.experience;
+export const selectLoading = (state: AppState) => state.data.info.isLoading;
 
 export default slice.reducer;

@@ -10,7 +10,8 @@ import { colorScheme } from '@/helpers/colorScheme'
 import { wrapper } from "../store/store"
 import { database } from '@/firebase.js'
 import { setState } from '@/store/slice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLoading } from '@/store/slice'
 
 import '@/styles/globals.css'
 
@@ -20,6 +21,7 @@ const Header = dynamic(
 )
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const isLoading = useSelector(selectLoading)
   const dispatch = useDispatch()
   const fetchData = async () => {
     try {
@@ -34,7 +36,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   useEffect(() => {
     colorScheme()
-    fetchData()
+    {isLoading && fetchData()}
   })
 
   return (
