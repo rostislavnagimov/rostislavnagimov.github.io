@@ -1,17 +1,20 @@
 import { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
+import Head from 'next/head';
+import { useDispatch, useSelector } from 'react-redux'
 
 import Body from '@/components/Body'
 import Footer from '@/components/Footer'
 import { NavItemPropsType } from '@/components/Header/types'
 
 import { colorScheme } from '@/helpers/colorScheme'
+
 import { wrapper } from "../store/store"
-import { database } from '@/firebase.js'
 import { setState } from '@/store/slice'
-import { useDispatch, useSelector } from 'react-redux'
 import { selectLoading } from '@/store/slice'
+
+import { database } from '@/firebase.js'
 
 import '@/styles/globals.css'
 
@@ -41,6 +44,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <Head>
+        <title>Rostislav</title>
+      </Head>
       <Header navData={navigation} />
       <Body>
         <Component {...pageProps} />
