@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import Card from '../components/Card.astro';
+import Pill from '../components/Pill.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base title="Projects | Rostislav Nagimov" description="Open Source projects and libraries by Rostislav Nagimov">
+  <div class="container">
+    <Card>
+      <Pill>Open Source & Libraries</Pill>
+      <h1>Projects</h1>
+      <p>Production-ready Rust libraries, CLI tools, and systems software.</p>
+      <p>Zero-cost abstractions, compact binary encodings, and microsecond parsing.</p>
+    </Card>
+
+    <Card>
+      <h2>Featured Repositories & Crates</h2>
+      <div class="list">
+        {projects.map((p) => (
+          <ProjectCard
+            title={p.data.title}
+            summary={p.data.summary}
+            repo={p.data.repo}
+            crates={p.data.crates}
+          />
+        ))}
+      </div>
+    </Card>
+  </div>
+</Base>
+

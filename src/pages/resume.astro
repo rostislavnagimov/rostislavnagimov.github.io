@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Resume | Rostislav Nagimov">
+  <!-- Section A — Hero -->
+  <section class="section" id="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title" class="heading-1">Resume</h1>
+    <p class="label">Experience &amp; Skills</p>
+    <p class="body">
+      15+ years building scalable systems, web platforms, and developer tools.
+    </p>
+  </section>
+
+  <!-- Section B — Categories -->
+  <section class="section" id="resume" aria-labelledby="resume-title">
+    <div class="grid">
+      <article class="card">
+        <h3 class="label">Experience</h3>
+        <p class="body">
+          Staff Engineer — Systems Platform (2022-present):
+          Architected Rust-based data pipeline processing 50TB/day. Led
+          migration from Node.js to Axum, 40% latency reduction.
+        </p>
+        <p class="body">
+          Senior Full-Stack Engineer (2018-2022): Built real-time
+          collaboration platform with React/TypeScript. Designed plugin
+          architecture for 3rd-party extensions.
+        </p>
+        <p class="body">
+          Backend Engineer (2015-2018): High-frequency trading infrastructure
+          in C++/Rust. Sub-microsecond order routing.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3 class="label">Core Competencies</h3>
+        <ul class="body">
+          <li>Rust</li>
+          <li>Node.js</li>
+          <li>TypeScript</li>
+          <li>Svelte/React</li>
+          <li>Axum/Actix</li>
+          <li>PostgreSQL/SQLite</li>
+          <li>WebAssembly</li>
+          <li>WebWorkers</li>
+          <li>FFmpeg</li>
+          <li>Brotli/Zstd</li>
+          <li>Vite</li>
+          <li>CI/CD</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3 class="label">Open Source</h3>
+        <ul class="body">
+          <li>
+            <a
+              href="https://github.com/rostislavnagimov/shortest-color"
+              class="link"
+              target="_blank"
+              rel="noopener">shortest-color</a
+            > — CSS color parser
+          </li>
+          <li>
+            <a
+              href="https://github.com/rostislavnagimov/base88"
+              class="link"
+              target="_blank"
+              rel="noopener">base88</a
+            > — binary encoding
+          </li>
+          <li>
+            <a
+              href="https://github.com/rostislavnagimov/cl-8"
+              class="link"
+              target="_blank"
+              rel="noopener">cl-8</a
+            > — color compression
+          </li>
+          <li>
+            <a
+              href="https://github.com/rostislavnagimov/language-handler"
+              class="link"
+              target="_blank"
+              rel="noopener">language-handler</a
+            > — macOS input switcher
+          </li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section C — Footer / Contact -->
+  <footer
+    class="section"
+    id="contact"
+    style="border-top: 1px solid var(--border); padding-top: var(--space-6);"
+  >
+    <nav class="footer-nav" aria-label="Contact">
+      <a href="https://github.com/rostislavnagimov" class="link" target="_blank" rel="noopener"
+        >GitHub</a
+      >
+      <a href="mailto:rostislav@nagimov.dev" class="link">Email</a>
+      <a href="https://t.me/rostislavnagimov" class="link" target="_blank" rel="noopener"
+        >Telegram</a
+      >
+    </nav>
+    <p class="muted mono" style="margin-top: var(--space-4);">
+      © 2025 Rostislav Nagimov. Built with Astro + Svelte 5.
+    </p>
+  </footer>
+</Base>

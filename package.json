@@ -1,0 +1,25 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/svelte": "^9.1.0",
+    "astro": "^7.4.0",
+    "svelte": "^5.57.2",
+    "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "lightningcss": "^1.33.0",
+    "terser": "^5.51.2"
+  }
+}

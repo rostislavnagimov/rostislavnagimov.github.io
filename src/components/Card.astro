@@ -1,0 +1,11 @@
+---
+import type { ACTION_QUERY_PARAMS } from "astro:actions";
+import type { $brand, $input, $output } from "astro:schema";
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<section class:list={['card', className]} {...rest}>
+  <slot />
+
+</section>

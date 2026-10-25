@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import Card from '../components/Card.astro';
+import Pill from '../components/Pill.astro';
+---
+
+<Base title="Blog | Rostislav Nagimov" description="Technical writing and engineering deep dives by Rostislav Nagimov">
+  <div class="container">
+    <Card>
+      <Pill>Technical Writing</Pill>
+      <h1>Blog</h1>
+      <p>Deep dives on systems programming, performance optimization, and Rust internals.</p>
+    </Card>
+
+    <Card>
+      <h2>Articles & Publications</h2>
+      <div class="list">
+        <Card class="project">
+          <Pill>Rust · Performance</Pill>
+          <h2>Zero-Cost Abstractions in Rust</h2>
+          <span><a href="#">Read article</a></span>
+          <p>How monomorphization, inlining, and LLVM optimization make generics free at runtime.</p>
+        </Card>
+
+        <Card class="project">
+          <Pill>Optimization</Pill>
+          <h2>Building a CSS Color Parser in &lt;120ns</h2>
+          <span><a href="#">Read article</a></span>
+          <p>SIMD lookup tables, branchless validation, and ultra-fast bit packing in shortest-color.</p>
+        </Card>
+
+        <Card class="project">
+          <Pill>Systems · macOS</Pill>
+          <h2>Custom macOS Input Switching with Rust</h2>
+          <span><a href="#">Read article</a></span>
+          <p>Bridging Rust and Swift for system-level keyboard event handling and per-app profile dispatch.</p>
+        </Card>
+
+        <Card class="project">
+          <Pill>Encoding · Compression</Pill>
+          <h2>CL-8: Однобайтовое сжатие текста</h2>
+          <span><a href="/cl-8/">Read article</a></span>
+          <p>Сжатие кириллицы и латиницы, паритет с Unicode и бенчмарки с Brotli/gzip на «Войне и мире».</p>
+        </Card>
+      </div>
+    </Card>
+  </div>
+</Base>
+

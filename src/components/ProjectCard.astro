@@ -1,0 +1,13 @@
+---
+import Card from "./Card.astro";
+
+const {title, summary, repo, crates} = Astro.props
+---
+
+<Card class="project">
+  <h1>{title}</h1>
+  <span><a href={repo} target="_blank">Github</a><a href={crates} target="_blank">Crates</a></span>
+  <p>{summary}</p>
+
+
+</Card>

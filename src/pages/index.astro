@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import Card from '../components/Card.astro'
+import Pill from '../components/Pill.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects')
+---
+
+<Base title="Rostislav Nagimov">
+<div class="container">
+  <Card>
+    <Pill>Full-stack & Systems dev</Pill>
+    <h1>Rostislav Nagimov</h1>
+    <p>Full-stack developer & open-sorce enthusiast</p>
+    <p>Optimization savvy.</p>
+  </Card>
+      
+  <Card>
+    <h2>Open Sourse Projects</h2>
+    <div class="list">
+      {projects.map((p) => (
+        <ProjectCard title={p.data.title} summary={p.data.summary} repo={p.data.repo} crates={p.data.crates} />
+      )
+
+      )}
+
+    </div>
+  </Card>
+</div>
+  
+</Base>
