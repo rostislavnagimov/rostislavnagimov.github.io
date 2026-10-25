@@ -8,8 +8,11 @@ import { getCollection } from 'astro:content';
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Base title="Projects | Rostislav Nagimov" description="Open Source projects and libraries by Rostislav Nagimov">
-  <div class="container">
+<Base
+  title="Projects — Rostislav Nagimov | Open Source & Rust Libraries"
+  description="Explore open source projects, high-performance Rust crates, binary encodings, and developer tools built and maintained by Rostislav Nagimov."
+>
+  <main class="container">
     <Card>
       <Pill>Open Source & Libraries</Pill>
       <h1>Projects</h1>
@@ -30,6 +33,7 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
         ))}
       </div>
     </Card>
-  </div>
+  </main>
 </Base>
+
 

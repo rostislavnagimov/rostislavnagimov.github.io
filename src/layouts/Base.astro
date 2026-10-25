@@ -2,20 +2,50 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 
-const { title, description = 'Персональный сайт' } = Astro.props;
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+}
+
+const {
+  title = 'Rostislav Nagimov — Systems & Full-Stack Developer',
+  description = 'Personal website and portfolio of Rostislav Nagimov — Full-Stack & Systems developer specializing in Rust, performance optimization, and open-source tools.',
+  keywords = 'Rostislav Nagimov, Rust, Systems Developer, Full-Stack Developer, Performance Optimization, WebAssembly, Open Source, shortest-color, base88',
+} = Astro.props;
+
+const siteUrl = Astro.site ?? 'https://rostislavnagimov.github.io';
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 ---
 
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="keywords" content={keywords} />
+    <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Rostislav Nagimov" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
   </head>
   <body class="page">
     <Header />
     <slot />
   </body>
 </html>
+

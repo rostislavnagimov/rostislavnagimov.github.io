@@ -8,8 +8,11 @@ import { getCollection } from 'astro:content';
 const projects = await getCollection('projects')
 ---
 
-<Base title="Rostislav Nagimov">
-<div class="container">
+<Base
+  title="Rostislav Nagimov — Systems & Full-Stack Developer"
+  description="Personal website and portfolio of Rostislav Nagimov — Full-Stack & Systems developer specializing in Rust, performance optimization, and open-source tools."
+>
+<main class="container">
   <Card>
     <Pill>Full-stack & Systems dev</Pill>
     <h1>Rostislav Nagimov</h1>
@@ -22,12 +25,9 @@ const projects = await getCollection('projects')
     <div class="list">
       {projects.map((p) => (
         <ProjectCard title={p.data.title} summary={p.data.summary} repo={p.data.repo} crates={p.data.crates} />
-      )
-
-      )}
-
+      ))}
     </div>
   </Card>
-</div>
-  
+</main>
 </Base>
+

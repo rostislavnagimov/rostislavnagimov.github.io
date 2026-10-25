@@ -6,8 +6,9 @@ const {title, summary, repo, crates} = Astro.props
 
 <Card class="project">
   <h1>{title}</h1>
-  <span><a href={repo} target="_blank">Github</a><a href={crates} target="_blank">Crates</a></span>
+  <span>
+    <a href={repo} target="_blank" rel="noopener noreferrer">Github</a>
+    {crates && <a href={crates} target="_blank" rel="noopener noreferrer">Crates</a>}
+  </span>
   <p>{summary}</p>
-
-
 </Card>
