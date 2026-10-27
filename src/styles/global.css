@@ -99,10 +99,14 @@ a {
   font-size: large;
   transition: transform 0.5s;
   cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-a:hover {
-  transform: translate3d(0, -5px, 0) rotate(5deg);
+@media (hover: hover) {
+  a:hover {
+    transform: translate3d(0, -5px, 0) rotate(5deg);
+  }
 }
 
 
