@@ -7,8 +7,8 @@ const {title, summary, repo, crates} = Astro.props
 <Card class="project">
   <h1>{title}</h1>
   <span>
-    <a href={repo} target="_blank" rel="noopener noreferrer">Github</a>
-    {crates && <a href={crates} target="_blank" rel="noopener noreferrer">Crates</a>}
+    <a href={repo} target="_blank" rel="noopener noreferrer" aria-label={`GitHub repository for ${title}`}>Github</a>
+    {crates && <a href={crates} target="_blank" rel="noopener noreferrer" aria-label={`Crates.io package for ${title}`}>Crates</a>}
   </span>
   <p>{summary}</p>
 </Card>
