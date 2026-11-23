@@ -13,9 +13,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "@astrojs/svelte": "^9.1.0",
     "astro": "^7.4.0",
-    "svelte": "^5.57.2",
     "typescript": "^6.0.3"
   },
   "devDependencies": {

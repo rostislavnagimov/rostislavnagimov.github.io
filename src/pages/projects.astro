@@ -20,15 +20,18 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
       <p>Zero-cost abstractions, compact binary encodings, and microsecond parsing.</p>
     </Card>
 
-    <Card>
-      <h2>Featured Repositories & Crates</h2>
-      <div class="list">
+    <Card class="project-catalog">
+      <h2>Project details</h2>
+      <div class="project-list">
         {projects.map((p) => (
           <ProjectCard
             title={p.data.title}
             summary={p.data.summary}
+            highlights={p.data.highlights}
             repo={p.data.repo}
             crates={p.data.crates}
+            slug={p.id}
+            detailed={true}
           />
         ))}
       </div>

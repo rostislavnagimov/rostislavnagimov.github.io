@@ -1,45 +1,31 @@
 ---
 title: shortest-color
-summary: Ultra-fast CSS color parser - <120ns, <6KB, zero dependencies. For hex, rgb/rgba, hsl/hsla, keywords
+summary: Zero-dependency Rust library that parses CSS colors and returns their shortest valid representation.
+highlights:
+  - Parses and shortens CSS color values in under 120 ns.
+  - Keeps runtime dependencies and binary footprint small.
+  - Supports common color forms such as hex, RGB, and named colors.
 repo: https://github.com/rostislavnagimov/shortest-color
 crates: https://crates.io/crates/shortest-color
 order: 1
 ---
 
-## Overview
+`shortest-color` parses CSS color values and converts them to the shortest equivalent CSS representation. The crate is designed for build tools, minifiers, and other performance-sensitive Rust applications.
 
-`shortest-color` is an ultra-fast, zero-dependency Rust library designed to parse CSS colors and convert them into their shortest valid string representation.
+The project targets a small binary footprint and reports parsing in under 120 ns, with no runtime dependencies.
 
-Built for production bundlers, CSS minifiers, compilers, and performance-critical systems where sub-microsecond latency is required.
-
-## Key Features
-
-- **Blazing Fast**: Parses and converts arbitrary CSS color strings in `<120ns`.
-- **Minimal Footprint**: Adds `<6KB` to your binary size.
-- **Zero Allocations**: Pure stack-allocated parsing without heap overhead.
-- **Broad Format Support**:
-  - Hex values: `#rgb`, `#rgba`, `#rrggbb`, `#rrggbbaa`
-  - RGB / RGBA functions: `rgb(r, g, b)`, `rgba(r, g, b, a)`
-  - HSL / HSLA functions: `hsl(h, s, l)`, `hsla(h, s, l, a)`
-  - Named CSS keywords: `transparent`, `currentcolor`, and standard color names.
-
-## Architecture
-
-The parser avoids heavy regular expressions and full AST parsing. Instead, it leverages branchless character lookups, SIMD-aligned byte scanning, and precomputed color map tables to resolve hex, rgb, and named keywords in sub-microsecond time.
-
-## Installation
-
-```bash
-cargo add shortest-color
-```
-
-## Quick Start
+## Usage
 
 ```rust
-use shortest_color::ShortestColor;
+use shortest_color::shorten_css_color;
 
-fn main() {
-    let result = ShortestColor::parse("rgba(255, 255, 255, 1.0)");
-    assert_eq!(result.as_str(), "#fff");
-}
+assert_eq!(shorten_css_color("#ff0000"), "red");
+assert_eq!(shorten_css_color("rgb(0,0,255)"), "blue");
+assert_eq!(shorten_css_color("WHITE"), "#fff");
+```
+
+Install it with Cargo:
+
+```sh
+cargo add shortest-color
 ```

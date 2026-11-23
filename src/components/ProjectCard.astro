@@ -1,14 +1,20 @@
 ---
 import Card from "./Card.astro";
 
-const {title, summary, repo, crates} = Astro.props
+const {title, summary, highlights = [], repo, crates, slug, detailed = false} = Astro.props
 ---
 
-<Card class="project">
-  <h1>{title}</h1>
-  <span>
+<Card class={detailed ? 'project project-detailed' : 'project'}>
+  <h2><a href={`/projects/${slug}/`}>{title}</a></h2>
+  <p>{summary}</p>
+  {detailed && (
+    <ul class="project-highlights">
+      {highlights.map((highlight) => <li>{highlight}</li>)}
+    </ul>
+  )}
+  <nav class="project-actions" aria-label={`${title} links`}>
+    <a href={`/projects/${slug}/`}>Details</a>
     <a href={repo} target="_blank" rel="noopener noreferrer" aria-label={`GitHub repository for ${title}`}>Github</a>
     {crates && <a href={crates} target="_blank" rel="noopener noreferrer" aria-label={`Crates.io package for ${title}`}>Crates</a>}
-  </span>
-  <p>{summary}</p>
+  </nav>
 </Card>

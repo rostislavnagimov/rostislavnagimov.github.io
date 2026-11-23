@@ -1,0 +1,32 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Pill from '../../components/Pill.astro';
+
+const article = await getEntry('blog', 'cl-8');
+if (!article) throw new Error('Blog article not found: cl-8');
+const { Content } = await render(article);
+---
+
+<Base
+  title={`${article.data.title} — Rostislav Nagimov`}
+  description={article.data.summary}
+  lang={article.data.lang}
+>
+  <main class="container article-container">
+    <article class="card article-page">
+      <a class="article-back-link" href="/blog/">← Все статьи</a>
+      <div class="article-heading">
+        <Pill>{article.data.category}</Pill>
+        <h1>{article.data.title}</h1>
+        <p class="article-lead">{article.data.summary}</p>
+        {article.data.date && <p class="article-meta"><time datetime={article.data.date}>{article.data.date}</time></p>}
+      </div>
+      <div class="article-content"><Content /></div>
+      <footer class="article-footer">
+        <a href="https://github.com/rostislavnagimov/cl-8" target="_blank" rel="noopener noreferrer">Исходный код CL-8 на GitHub</a>
+        <a href="/blog/">К списку статей</a>
+      </footer>
+    </article>
+  </main>
+</Base>

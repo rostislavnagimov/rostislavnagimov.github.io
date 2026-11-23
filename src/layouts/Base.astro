@@ -6,12 +6,14 @@ interface Props {
   title?: string;
   description?: string;
   keywords?: string;
+  lang?: string;
 }
 
 const {
   title = 'Rostislav Nagimov — Systems & Full-Stack Developer',
   description = 'Personal website and portfolio of Rostislav Nagimov — Full-Stack & Systems developer specializing in Rust, performance optimization, and open-source tools.',
   keywords = 'Rostislav Nagimov, Rust, Systems Developer, Full-Stack Developer, Performance Optimization, WebAssembly, Open Source, shortest-color, base88',
+  lang = 'en',
 } = Astro.props;
 
 const siteUrl = Astro.site ?? 'https://rostislavnagimov.github.io';
@@ -19,7 +21,7 @@ const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

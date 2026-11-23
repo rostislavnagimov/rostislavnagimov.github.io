@@ -5,7 +5,7 @@ import Pill from '../components/Pill.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
 
-const projects = await getCollection('projects')
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order)
 ---
 
 <Base
@@ -14,7 +14,7 @@ const projects = await getCollection('projects')
 >
 <main class="container">
   <Card>
-    <div class="line">
+    <div class="social-links">
       <Pill>Full-stack & Systems dev</Pill>
       <a href="https://github.com/rostislavnagimov" target="_blank"><img src="/gh.svg" width="25" height="25" alt="github"/></a>
       <a href="https://www.linkedin.com/in/rostislavnagimov/" target="_blank"><img src="/li.svg" width="25" height="25" alt="linkedin"/></a>
@@ -22,15 +22,15 @@ const projects = await getCollection('projects')
 
     </div>
     <h1>Rostislav Nagimov</h1>
-    <p>Full-stack developer & open-sorce enthusiast</p>
+    <p>Full-stack developer &amp; open-source enthusiast</p>
     <p>Optimization savvy.</p>
   </Card>
       
   <Card>
-    <h2>Open Sourse Projects</h2>
+    <h2>Open Source Projects</h2>
     <div class="list">
       {projects.map((p) => (
-        <ProjectCard title={p.data.title} summary={p.data.summary} repo={p.data.repo} crates={p.data.crates} />
+        <ProjectCard title={p.data.title} summary={p.data.summary} repo={p.data.repo} crates={p.data.crates} slug={p.id} />
       ))}
     </div>
   </Card>

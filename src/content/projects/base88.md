@@ -1,6 +1,10 @@
 ---
 title: base88
-summary: Binary-to-text encoding designed for the web. Encodes arbitrary binary data into a string that is valid in JSON, HTML attributes, and JavaScript string literals — without any escaping.
+summary: Binary-to-text encoding designed for JSON, HTML attributes, and JavaScript strings.
+highlights:
+  - Encodes arbitrary binary data with an 88-character printable alphabet.
+  - Avoids padding and escaping in common web string contexts.
+  - Also includes helpers for decimal digit strings and bit strings.
 repo: https://github.com/rostislavnagimov/base88
 crates: https://crates.io/crates/base88
 order: 2
@@ -14,19 +18,21 @@ Unlike Base64, which frequently introduces characters requiring URL or HTML esca
 
 ## Why Base88?
 
-- **~15% Smaller Payload**: Produces strings roughly 15% more compact than standard Base64.
+- **Web-safe output**: Uses a printable 88-character alphabet designed for common web string contexts.
 - **No Padding**: Avoids unnecessary padding characters like `=`.
 - **Zero Escaping**: Safe in JSON strings, HTML attributes, URLs, and shell arguments.
-- **High Performance**: Streaming encoder and decoder implementation written in pure Rust.
+- **Pure Rust**: Includes encoder and decoder utilities for binary, digit-only, and bit-string data.
 
 ## Comparison Table
 
 | Feature | Base64 | Base88 |
 |---|---|---|
-| Expansion factor | ~133% | ~118% |
+| Expansion factor | ~133% | ~126% |
 | JSON-safe without escapes | No (`/`, `\`) | Yes |
 | HTML-attribute safe | No (`&`, `"`, `'`) | Yes |
 | Padding required | Yes (`=`) | No |
+
+Base88 trades density against Base64 for safer output characters and a fixed-block encoding scheme. For full blocks, 19 input bytes become 24 characters, a 26.3% expansion.
 
 ## Installation
 

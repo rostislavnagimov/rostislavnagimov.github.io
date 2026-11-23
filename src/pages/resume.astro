@@ -2,112 +2,120 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Resume | Rostislav Nagimov">
-  <!-- Section A — Hero -->
-  <section class="section" id="hero" aria-labelledby="hero-title">
-    <h1 id="hero-title" class="heading-1">Resume</h1>
-    <p class="label">Experience &amp; Skills</p>
-    <p class="body">
-      15+ years building scalable systems, web platforms, and developer tools.
-    </p>
-  </section>
+<Base
+  title="Software Engineer — Rostislav Nagimov"
+  description="Resume of Rostislav Nagimov, a full-stack software engineer with 6+ years building high-performance Web2 and Web3 applications."
+>
+  <main class="container resume-page">
+    <section class="card resume-hero" aria-labelledby="resume-title">
+      <p class="resume-eyebrow">Resume</p>
+      <h1 id="resume-title">Software Engineer</h1>
+      <p class="resume-name">Rostislav Nagimov</p>
+      <address class="resume-contact">
+        <span>Phuket, Thailand</span>
+        <a href="mailto:rostislav.nagimov@gmail.com">rostislav.nagimov@gmail.com</a>
+        <a href="https://t.me/rostislavnagimov" target="_blank" rel="noopener noreferrer">Telegram: @rostislavnagimov</a>
+      </address>
+    </section>
 
-  <!-- Section B — Categories -->
-  <section class="section" id="resume" aria-labelledby="resume-title">
-    <div class="grid">
-      <article class="card">
-        <h3 class="label">Experience</h3>
-        <p class="body">
-          Staff Engineer — Systems Platform (2022-present):
-          Architected Rust-based data pipeline processing 50TB/day. Led
-          migration from Node.js to Axum, 40% latency reduction.
-        </p>
-        <p class="body">
-          Senior Full-Stack Engineer (2018-2022): Built real-time
-          collaboration platform with React/TypeScript. Designed plugin
-          architecture for 3rd-party extensions.
-        </p>
-        <p class="body">
-          Backend Engineer (2015-2018): High-frequency trading infrastructure
-          in C++/Rust. Sub-microsecond order routing.
-        </p>
-      </article>
+    <section class="card resume-section" aria-labelledby="summary-title">
+      <h2 id="summary-title">Professional summary</h2>
+      <div class="resume-summary">
+        <p><strong>Full Stack Developer with 6+ years of experience</strong> building Web2 and Web3 products with React, Next.js, and TypeScript.</p>
+        <p>Built applications on <strong>Solana and EVM</strong>, led DEX development, and authored open-source Rust libraries.</p>
+        <p>Focus areas include <strong>performance engineering</strong>, media optimization, Rust services, and AI model integration.</p>
+      </div>
+    </section>
 
-      <article class="card">
-        <h3 class="label">Core Competencies</h3>
-        <ul class="body">
-          <li>Rust</li>
-          <li>Node.js</li>
-          <li>TypeScript</li>
-          <li>Svelte/React</li>
-          <li>Axum/Actix</li>
-          <li>PostgreSQL/SQLite</li>
-          <li>WebAssembly</li>
-          <li>WebWorkers</li>
-          <li>FFmpeg</li>
-          <li>Brotli/Zstd</li>
-          <li>Vite</li>
-          <li>CI/CD</li>
+    <section class="card resume-section" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <ul class="resume-skills">
+        <li>Next.js (SSR, API)</li>
+        <li>React</li>
+        <li>Web3 (Solana, EVM)</li>
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Git</li>
+        <li>Rust</li>
+        <li>Tailwind CSS</li>
+        <li>GraphQL</li>
+      </ul>
+    </section>
+
+    <section class="card resume-section" aria-labelledby="experience-title">
+      <h2 id="experience-title">Employment history</h2>
+
+      <article class="resume-job">
+        <h3>Full Stack Developer <span>· Cozy Ventures · Barcelona, Spain</span></h3>
+        <p class="resume-date"><time datetime="2026-01">Jan 2026</time> – Present</p>
+        <ul>
+          <li>Developed features and performance optimizations for a <strong>DEX on MegaETH</strong> using React and a Vite single-file architecture.</li>
+          <li>Reduced app load time by <strong>50%</strong> through nginx pre-compressed static serving and Vite build pipeline tuning.</li>
+          <li>Built a <strong>zero-dependency UI kit</strong>; parallelized DevOps builds to make them <strong>30% faster</strong>.</li>
+          <li>Improved transaction processing with request parallelization and asynchronous computation.</li>
+          <li>Reduced bundle size through targeted refactoring and optimized raster and vector asset handling.</li>
+          <li>Added <strong>Playwright automation</strong> and performance metrics.</li>
         </ul>
       </article>
 
-      <article class="card">
-        <h3 class="label">Open Source</h3>
-        <ul class="body">
-          <li>
-            <a
-              href="https://github.com/rostislavnagimov/shortest-color"
-              class="link"
-              target="_blank"
-              rel="noopener">shortest-color</a
-            > — CSS color parser
-          </li>
-          <li>
-            <a
-              href="https://github.com/rostislavnagimov/base88"
-              class="link"
-              target="_blank"
-              rel="noopener">base88</a
-            > — binary encoding
-          </li>
-          <li>
-            <a
-              href="https://github.com/rostislavnagimov/cl-8"
-              class="link"
-              target="_blank"
-              rel="noopener">cl-8</a
-            > — color compression
-          </li>
-          <li>
-            <a
-              href="https://github.com/rostislavnagimov/language-handler"
-              class="link"
-              target="_blank"
-              rel="noopener">language-handler</a
-            > — macOS input switcher
-          </li>
+      <article class="resume-job">
+        <h3>Frontend Lead &amp; Mentor <span>· Solva Technology · Almaty, Kazakhstan</span></h3>
+        <p class="resume-date"><time datetime="2025-01">Jan 2025</time> – <time datetime="2026-01">Jan 2026</time></p>
+        <ul>
+          <li>Led development of a <strong>zero-dependency component kit</strong> and CRM system with React and Next.js.</li>
+          <li>Reduced one-hour Full HD screencasts from about <strong>600 MB to 48 MB</strong> with no perceptible quality loss.</li>
+          <li>Mentored <strong>30+ junior developers</strong> in React, Next.js, and TypeScript through projects and code reviews.</li>
         </ul>
       </article>
-    </div>
-  </section>
 
-  <!-- Section C — Footer / Contact -->
-  <footer
-    class="section"
-    id="contact"
-    style="border-top: 1px solid var(--border); padding-top: var(--space-6);"
-  >
-    <nav class="footer-nav" aria-label="Contact">
-      <a href="https://github.com/rostislavnagimov" class="link" target="_blank" rel="noopener"
-        >GitHub</a
-      >
-      <a href="mailto:rostislav@nagimov.dev" class="link">Email</a>
-      <a href="https://t.me/rostislavnagimov" class="link" target="_blank" rel="noopener"
-        >Telegram</a
-      >
-    </nav>
-    <p class="muted mono" style="margin-top: var(--space-4);">
-      © 2025 Rostislav Nagimov. Built with Astro + Svelte 5.
-    </p>
-  </footer>
+      <article class="resume-job">
+        <h3>Full Stack Developer <span>· Phase Labs · Dubai, UAE</span></h3>
+        <p class="resume-date"><time datetime="2023-12">Dec 2023</time> – <time datetime="2025-01">Jan 2025</time></p>
+        <ul>
+          <li>Built <strong>Solana applications</strong> for crowdfunding, tax, and staking with Next.js SSR and React.</li>
+          <li>Developed Rust services with Loco.rs and Axum, plus Next.js APIs for email and invoice automation and multi-source data fetching with TimescaleDB, S3, and Firebase.</li>
+          <li>Built real-time blockchain mini-games with a <strong>Rust/Axum and WebSocket</strong> backend.</li>
+        </ul>
+      </article>
+
+      <article class="resume-job">
+        <h3>Full Stack Developer <span>· Solver AI · Sunnyvale, USA</span></h3>
+        <p class="resume-date"><time datetime="2022-11">Nov 2022</time> – <time datetime="2023-12">Dec 2023</time></p>
+        <ul>
+          <li>Led a <strong>three-person frontend team</strong> while building the core Next.js and TypeScript application.</li>
+          <li>Improved landing page performance by <strong>700%</strong> for SEO and cut Azure deployment time by <strong>80%</strong>.</li>
+          <li>Built routing, authorization, WebSocket and REST communication, server-side scraping APIs, and integrated the company AI model.</li>
+        </ul>
+      </article>
+
+      <article class="resume-job">
+        <h3>Frontend Developer <span>· EventInc · Hamburg, Germany</span></h3>
+        <p class="resume-date"><time datetime="2021-10">Oct 2021</time> – <time datetime="2022-11">Nov 2022</time></p>
+        <ul>
+          <li>Built messenger components with <strong>client-side private-data filtering</strong> to reduce fraud risks.</li>
+          <li>Implemented Next.js interfaces from Figma, maintained Jest and Cypress tests, and ran <strong>A/B tests</strong>.</li>
+        </ul>
+      </article>
+
+      <article class="resume-job">
+        <h3>QA Engineer <span>· Yandex · Moscow, Russia</span></h3>
+        <p class="resume-date"><time datetime="2021-04">Apr 2021</time> – <time datetime="2021-10">Oct 2021</time></p>
+        <ul><li>Performed <strong>functional testing</strong> across web applications before release.</li></ul>
+      </article>
+
+      <article class="resume-job">
+        <h3>Engineer <span>· Norilsk Nickel · Norilsk, Russia</span></h3>
+        <p class="resume-date"><time datetime="2015-07">Jul 2015</time> – <time datetime="2021-04">Apr 2021</time></p>
+        <ul><li>Built <strong>internal web tools</strong>, technical information sites, and knowledge and feedback forms to improve information access and workflows.</li></ul>
+      </article>
+    </section>
+
+    <section class="card resume-section" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <ul class="resume-education">
+        <li><strong>Bachelor’s degree in Computer Science</strong> · SIBIT · Omsk, Russia · 2023</li>
+        <li><strong>Professional certification, Frontend Developer on React</strong> · Meta · 2023</li>
+      </ul>
+    </section>
+  </main>
 </Base>
