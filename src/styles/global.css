@@ -291,6 +291,7 @@ header nav a {
 }
 
 .project-copy pre {
+  box-sizing: border-box;
   display: block;
   width: fit-content;
   max-width: 100%;
@@ -511,6 +512,7 @@ header nav a {
 }
 
 .article-content pre {
+  box-sizing: border-box;
   max-width: 100%;
   margin-inline: 0;
   overflow-x: auto;
@@ -575,7 +577,11 @@ header nav a {
   }
 
   body::before {
-    display: none;
     animation: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    transform: none;
   }
 }
